@@ -4,7 +4,7 @@ const currentOperation = document.getElementById('current-operation');
 let currentInput = '0';
 let previousInput = '';
 let operator = '';
-let shouldResetDisplay = false; // Initialized correctly
+let shouldResetDisplay = false; 
 
 
 let buttons = document.querySelectorAll('.btns');
@@ -50,22 +50,22 @@ function updateDisplay() {
     }
 }
 
-// FIX: Improved appendNumber logic for multi-digit input and '00' button
+
 function appendNumber(num) {
     if (shouldResetDisplay) {
         currentInput = num;
         shouldResetDisplay = false;
     } else {
-        // 1. Prevent '00' if display is currently just '0'
+       
         if (currentInput === '0' && num === '00') {
             return;
         }
 
-        // 2. If display is '0', replace it with the new number
+       
         if (currentInput === '0') {
             currentInput = num;
         } 
-        // 3. Otherwise, append the number
+      
         else {
             currentInput += num;
         }
@@ -98,7 +98,7 @@ function calculate() {
             result = prev - curr;
             break;
         case 'x':
-        case '*': // Added for keyboard compatibility
+        case '*': 
             result = prev * curr;
             break;
         case '/':
@@ -134,7 +134,7 @@ function deleteLastDigit() {
 }
 
 
-function addDecimal() { // Renamed from adddecimal to addDecimal
+function addDecimal() { 
     if (shouldResetDisplay) {
         currentInput = '0.';
         shouldResetDisplay = false;
@@ -162,19 +162,19 @@ document.addEventListener("keydown", (e) => {
         updateDisplay();
 
     } else if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') {
-        e.preventDefault(); // Optional: prevent scroll on space/operator keys
-        const op = e.key === '*' ? 'x' : e.key; // Map keyboard '*' to button 'x'
+        
+        const op = e.key === '*' ? 'x' : e.key; 
         handleOperator(op);
         updateDisplay();
     } else if (e.key === 'Enter' || e.key === '=') {
-        e.preventDefault(); // Prevent Enter from triggering button click/submit
+        e.preventDefault(); 
         calculate();
         updateDisplay();
     } else if (e.key === 'Escape') {
         clearAll();
         updateDisplay();
     } 
-    // FIX: Added Backspace support
+    
     else if (e.key === 'Backspace') {
         deleteLastDigit();
         updateDisplay();
