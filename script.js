@@ -113,6 +113,9 @@ function calculate() {
 
 
 function deleteLastDigit() {
+    if (shouldResetDisplay) {
+        shouldResetDisplay = false;
+    }
     if (currentInput.length > 1) {
         currentInput = currentInput.slice(0, -1);
     }
