@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Istok", sans-serif;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(208, 255, 235);
+
+}
+
+.cal-body {
+    width: 20rem;
+    height: 35rem;
+    background-color: rgb(47, 47, 47);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.screen {
+    height: 20%;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #5d5d5d7e;
+    border: none;
+    outline: none;
+    caret-color: white;
+    font-size: 3em;
+    text-align: right;
+    padding: 7px 10px 7px 0 ;
+    overflow-x: hidden;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+
+.screen:focus {
+    outline: none;
+    border: none;
+}
+#previous-display{
+    color: rgb(141, 141, 141);
+    font-size: 2.2rem;
+}
+#current-display{
+    color: rgb(141, 141, 141);
+    font-size: 3.3rem;
+}
+
+
+.buttons {
+    height: 62%;
+    width: 88%;
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 6px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Istok Web", sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(106, 106, 106);
+    border-radius: 4px;
+    border: none;
+
+}
+
+#Equals {
+    background-color: #FF8A24;
+    color: white;
+    font-size: 2rem;
+    grid-row: span 2;
+}
+
+#AC {
+    background-color: #FF8A24;
+    color: white;
+
+}
+
+#backspace {
+    font-size: 1.4rem;    
+    color: white;
+    
+}
+
+#divide {
+    color: #FF8A24;
+}
+
+#mul {
+    color: #FF8A24;
+}
+
+#minus {
+    font-size: 2rem;
+    color: #FF8A24;
+
+}
+
+#add {
+    color: #FF8A24;
+}
+
+.btn-white {
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.349);
+
+}
+
+.btn-white:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.762);
+}
+
+.btn-orcom {
+    transition: all 0.1s ease;
+}
+
+.btn-orcom:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.762);
+}
+
+.btn-backor:active {
+    box-shadow: inset 0 0 10px #6f3400;
+}
+
+@media (max-width:420px) {
+    .cal-body {
+        height: 100vh;
+    }
+
+    body {
+        background-color: rgb(47, 47, 47);
+    }
+
+    .buttons {
+        height: 55%;
+        min-width: 290px;
+    }
+}
